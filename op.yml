@@ -1,0 +1,31 @@
+name: github.com/docker.image.build
+description: builds a docker image
+inputs:
+  dockerfile:
+    file:
+      description: dockerfile for build
+      default: Dockerfile
+  context:
+    dir:
+      description: context for build
+      default: .
+  imageName:
+    string:
+      constraints: { format: docker-image-ref }
+      description: name of image
+outputs:
+  imageTar:
+    file:
+      description: tar of image
+run:
+  container:
+    cmd: [ /cmd.sh ]
+    files:
+      /cmd.sh: /cmd.sh
+      /buildContext/Dockerfile: dockerfile
+      /image.tar: imageTar
+    dirs:
+      /buildContext: context
+    envVars:
+      imageName:
+    image: { ref: 'docker:17.05-dind' }
