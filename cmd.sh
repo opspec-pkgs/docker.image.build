@@ -13,4 +13,4 @@ echo "building image"
 docker image build -t "$imageName" /buildContext
 
 echo "saving image"
-docker image save $imageName > image.tar
+docker image save $imageName > /image.tar
