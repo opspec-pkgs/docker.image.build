@@ -1,4 +1,4 @@
-name: github.com/docker.image.build
+name: github.com/opspec-pkgs/docker.image.build
 description: builds a docker image
 inputs:
   dockerfile:
