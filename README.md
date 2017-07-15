@@ -1,7 +1,7 @@
-# problem statement
+# Problem statement
 builds a docker image
 
-# example usage
+# Example usage
 
 > note: in examples, VERSION represents a version of the docker.image.build pkg
 
@@ -22,6 +22,15 @@ opctl run github.com/opspec-pkgs/docker.image.build#VERSION
 ```yaml
 op:
   pkg: { ref: github.com/opspec-pkgs/docker.image.build#VERSION }
-  inputs: { dockerfile, context, imageName }
-  outputs: { imageTar }
+  inputs: 
+    dockerfile:
+    context:
+    imageName:
+  outputs:
+    imageTar:
 ```
+
+# Support
+
+join us on [![Slack](https://opspec-slackin.herokuapp.com/badge.svg)](https://opspec-slackin.herokuapp.com/)
+or [open an issue](https://github.com/opspec-pkgs/docker.image.build/issues)
