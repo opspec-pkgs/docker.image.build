@@ -5,10 +5,10 @@ set -e
 echo "starting docker daemon"
 nohup dockerd \
   --host=unix:///var/run/docker.sock \
-  --storage-driver=overlay &
+  --storage-driver=aufs &
 
 # poll for docker daemon up
-max_retries=3
+max_retries=2
 n=0
 until [ $n -ge $max_retries ]
 do
