@@ -13,6 +13,7 @@ inputs:
     string:
       constraints: { format: docker-image-ref }
       description: name of image
+version: 1.1.0
 outputs:
   imageTar:
     file:
