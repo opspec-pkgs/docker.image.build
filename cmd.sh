@@ -6,7 +6,7 @@ echo "starting docker daemon"
 nohup dockerd \
 --host=unix:///var/run/docker.sock \
 --host=tcp://0.0.0.0:2375 \
---storage-driver=overlay2 &
+--storage-driver=overlay2
 
 # poll until docker daemon reachable
 n=0
