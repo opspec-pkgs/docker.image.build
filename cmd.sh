@@ -8,8 +8,14 @@ nohup dockerd \
 --host=tcp://0.0.0.0:2375 \
 --storage-driver=overlay2 &
 
-echo ""
-sleep 2
+# poll until docker daemon reachable
+n=0
+until [ $n -ge 3 ]
+do
+  docker ps && break
+  n=$((n+1))
+  sleep 3
+done
 
 echo "building image"
 docker image build -t "$imageName" /buildContext
