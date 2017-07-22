@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/opspec-pkgs/docker.image.build.svg?branch=master)](https://travis-ci.org/opspec-pkgs/docker.image.build)
+
 # Problem statement
 builds a docker image
 
