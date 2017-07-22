@@ -3,19 +3,25 @@
 set -e
 
 echo "starting docker daemon"
-dockerd \
---host=unix:///var/run/docker.sock \
---host=tcp://0.0.0.0:2375 \
---storage-driver=overlay2
+nohup dockerd \
+  --host=unix:///var/run/docker.sock \
+  --storage-driver=overlay &
 
-# poll until docker daemon reachable
+# poll for docker daemon up
+max_retries=3
 n=0
-until [ $n -ge 3 ]
+until [ $n -ge $max_retries ]
 do
   docker ps && break
   n=$((n+1))
   sleep 3
 done
+
+if [ "$n" -eq "$max_retries" ]; then
+  # assume failed
+  cat nohup.out
+  exit 1
+fi
 
 echo "building image"
 docker image build -t "$imageName" /buildContext
