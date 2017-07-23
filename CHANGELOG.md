@@ -7,3 +7,8 @@ accordance with [![keepachangelog 1.0.0](https://img.shields.io/badge/keepachang
 
 ## \[1.0.0] - 2017-07-22
 
+### Changed
+- Use aufs as storage driver to avoid disk space errors during build
+
+## \[1.0.0] - 2017-06-01
+
