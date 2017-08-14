@@ -28,6 +28,11 @@ op:
     dockerfile:
     context:
     imageName:
+    # begin optional args
+    username:
+    password:
+    registry:
+    # end optional args
   outputs:
     imageTar:
 ```
