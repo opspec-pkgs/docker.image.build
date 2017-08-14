@@ -5,6 +5,11 @@ accordance with [![keepachangelog 1.0.0](https://img.shields.io/badge/keepachang
 
 ## \[Unreleased]
 
+## \[1.2.0] - 2017-08-14
+
+### Changed
+- add optional inputs for pulling base image from private registry
+
 ## \[1.1.0] - 2017-07-22
 
 ### Changed
