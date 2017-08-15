@@ -13,7 +13,22 @@ inputs:
     string:
       constraints: { format: docker-image-ref }
       description: name of image
-version: 1.1.0
+  username:
+    string:
+      constraints: { minLength: 1 }
+      description: username for auth w/ private registry
+      default: ' '
+  password:
+    string:
+      constraints: { minLength: 1 }
+      description: password for auth w/ private registry
+      default: ' '
+      isSecret: true
+  registry:
+    string:
+      description: private registry to pull image from
+      default: docker.io
+version: 1.2.0
 outputs:
   imageTar:
     file:
@@ -29,4 +44,7 @@ run:
       /buildContext: context
     envVars:
       imageName:
+      username:
+      password:
+      registry:
     image: { ref: 'docker:17.05-dind' }
