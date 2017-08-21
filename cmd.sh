@@ -30,7 +30,8 @@ docker login -u "$username" -p "$password" "$registry"
 fi
 
 echo "building image"
-docker image build -t "$imageName" /buildContext
+# this syntax used so dockerfile needn't be within context
+cat /Dockerfile | docker image build -t "$imageName" -f - /buildContext
 
 echo "saving image"
 docker image save $imageName > /image.tar
