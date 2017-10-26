@@ -28,7 +28,7 @@ inputs:
     string:
       description: private registry to pull image from
       default: docker.io
-version: 1.2.1
+version: 2.0.0
 outputs:
   imageTar:
     file:
@@ -37,14 +37,14 @@ run:
   container:
     cmd: [ /cmd.sh ]
     files:
-      /cmd.sh: /cmd.sh
-      /Dockerfile: dockerfile
-      /image.tar: imageTar
+      /cmd.sh:
+      /Dockerfile: $(dockerfile)
+      /image.tar: $(imageTar)
     dirs:
-      /buildContext: context
+      /buildContext: $(context)
     envVars:
       imageName:
       username:
       password:
       registry:
-    image: { ref: 'docker:17.07.0-dind' }
+    image: { ref: 'docker:17.10.0-dind' }
