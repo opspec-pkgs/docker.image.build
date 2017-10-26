@@ -3,27 +3,34 @@
 # Problem statement
 builds a docker image
 
-# Example usage
+# Known limitations
+the host must be capable of running containers w/ overlay2 filesystem
 
-> note: in examples, VERSION represents a version of the docker.image.build pkg
+# Format
+
+this version of the pkg is in
+[![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html)
+format
+
+# Example usage
 
 ## install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/docker.image.build#VERSION
+opctl pkg install github.com/opspec-pkgs/docker.image.build#2.0.0
 ```
 
 ## run
 
 ```
-opctl run github.com/opspec-pkgs/docker.image.build#VERSION
+opctl run github.com/opspec-pkgs/docker.image.build#2.0.0
 ```
 
 ## compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/docker.image.build#VERSION }
+  pkg: { ref: github.com/opspec-pkgs/docker.image.build#2.0.0 }
   inputs: 
     dockerfile:
     context:
