@@ -23,10 +23,9 @@ if [ "$n" -eq "$max_retries" ]; then
   exit 1
 fi
 
-
 if [ "$username" != " " ]; then
 echo "logging in to registry"
-docker login -u "$username" -p "$password" "$registry"
+echo -n "$password" | docker login -u "$username" --password-stdin "$registry"
 fi
 
 echo "building image"
