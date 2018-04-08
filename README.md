@@ -32,11 +32,11 @@ op:
   inputs:
     imageName:
     # params w/ default
-    dockerfile:
     context:
-    username:
+    dockerfile:
     password:
     registry:
+    username:
   outputs:
     imageTar:
 ```

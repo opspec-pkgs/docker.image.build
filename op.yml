@@ -8,7 +8,7 @@ inputs:
   context:
     dir:
       description: context for build
-      default: .
+      default: /default_context
   imageName:
     string:
       constraints: { format: docker-image-ref }
