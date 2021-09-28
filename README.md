@@ -1,3 +1,5 @@
+Note: this op has been deprecated in favor of [github.com/opspec-pkgs/opencontainers.image.build-tar](https://github.com/opspec-pkgs/opencontainers.image.build-tar) which is a full replacement without being specific to docker. 
+
 [![Build Status](https://travis-ci.org/opspec-pkgs/docker.image.build.svg?branch=master)](https://travis-ci.org/opspec-pkgs/docker.image.build)
 
 <img src="icon.svg" alt="icon" height="100px">
